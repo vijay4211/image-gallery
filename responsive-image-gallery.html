@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div.responsive{
+            border: 1px solid red;
+            padding: 0 6px;
+            /* parent width */
+            width: 24.99%;
+            margin: 10px;
+            /* responsive div ek ke samne ek aa jate hai. */
+            float: left;
+        }
+        div.gallery img{
+            /* child width */
+            width: 100%;
+            height: auto;
+        }
+        div.gallery{
+            border: 1px solid #ccc;
+        }
+        div.gallery:hover{
+            border: 1px solid #777;
+        }
+        div.desc{
+            text-align: center;
+            padding: 15px;
+        }
+
+
+        /* max-width 700px hongi tab hame width her ek div ki 49% honi chahiye. */
+        @media only screen and (max-width:700px){
+            .responsive{
+                width: 49.99%;
+                margin: 6px 0;
+            }
+        }
+
+        /* max-width 500px hongi tab hame width her ek div ki 100% honi chahiye. */
+        @media only screen and (max-width:500px){
+            .responsive{
+                width: 100%;
+            }
+        }
+         /* float left and float right remove hote hai hab ham clear both ka use karte hai. */
+        .clearfix:after{
+            content: '';
+            display: table;
+            clear: both;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="responsive">
+        <div class="gallery">
+            <img src="../img1.jpg" alt="">
+            <div class="desc">Add a description of the image here</div>
+        </div>
+    </div>
+
+    <div class="responsive">
+        <div class="gallery">
+            <img src="../img1.jpg" alt="">
+            <div class="desc">Add a description of the image here</div>
+        </div>
+    </div>
+
+    <div class="responsive">
+        <div class="gallery">
+            <img src="../img1.jpg" alt="">
+            <div class="desc">Add a description of the image here</div>
+        </div>
+    </div>
+
+    <div class="responsive">
+        <div class="gallery">
+            <img src="../img1.jpg" alt="">
+            <div class="desc">Add a description of the image here</div>
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+</body>
+</html>
+
+<!-- parent width ke under child width adjuct ho jati hai. -->
